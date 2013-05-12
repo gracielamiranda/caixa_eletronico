@@ -7,6 +7,8 @@ package hardware;
  * @author Andre
  *
  */
-public abstract class Impressora {
-	public abstract void imprimirRecibo();
+public class Impressora {
+	public void imprimirRecibo(){
+		System.out.println("Impressao de recibo");
+	}
 }
