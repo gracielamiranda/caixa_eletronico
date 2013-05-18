@@ -1,4 +1,4 @@
-<project name="CaixaEletronico" basedir="\Projeto-JAVA\CaixaEletronico" default="main">
+<project name="CaixaEletronico" basedir="Projeto-JAVA\CaixaEletronico" default="main">
 
     <property name="src.dir"     value="src"/>
 
