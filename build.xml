@@ -29,7 +29,7 @@
         </copy>
     </target>
 
-    <target name="jar" depends="junit">
+    <target name="jar" depends="test">
         <mkdir dir="${jar.dir}"/>
         <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}" excludes="**/*Test.class">
             <manifest>
@@ -38,7 +38,7 @@
         </jar>
     </target>
 
-    <target name="junit" depends="compile">
+    <target name="test" depends="compile">
         <delete dir="${junit.out.dir.xml}"/>
         <mkdir  dir="${junit.out.dir.xml}"/>
         <junit printsummary="yes" haltonfailure="yes" showoutput="yes" >
@@ -55,7 +55,7 @@
         </junit>
     </target>
 
-    <target name="junitreport" depends="junit">
+    <target name="junitreport" depends="test">
         <junitreport todir="${report.dir}">
             <fileset dir="${report.dir}" includes="TEST-*.xml"/>
             <report todir="${report.dir}"/>
