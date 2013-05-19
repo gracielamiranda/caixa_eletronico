@@ -1,4 +1,6 @@
 package hardware;
+
+import dominio.Recibo;
 /**
  * 
  */
@@ -8,7 +10,11 @@ package hardware;
  *
  */
 public class Impressora {
-	public void imprimirRecibo(){
+	public void imprimirRecibo(Recibo recibo){
 		System.out.println("Impressao de recibo");
+		System.out.println("Informacao: "+recibo.informacao );
+		System.out.println("Data: "+recibo.informacao );
+		System.out.println("Conta: "+recibo.conta );
+		System.out.println("Informacao:"+recibo.informacao );
 	}
 }
