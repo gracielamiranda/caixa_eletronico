@@ -1,6 +1,5 @@
 package apresentacao;
-//TODO Verificar real necessidade desta classe, me parece que não precisaríamos nos
-// preocupar com a camada de apresentação.
+
 public class CaixaConsole {
 
 	/**

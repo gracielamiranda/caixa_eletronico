@@ -3,7 +3,7 @@
  */
 
 /**
- * Classe que representa a entidade Banco, apenas deverá simular as transa
+ * Classe que representa a entidade Banco, apenas devera simular as transacoes
  * Classe ainda se um pacote definido.
  * @author amfirmo
  *

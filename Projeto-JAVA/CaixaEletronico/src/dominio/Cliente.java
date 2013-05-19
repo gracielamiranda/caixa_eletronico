@@ -1,11 +1,11 @@
 package dominio;
 
 public class Cliente {
-	//TODO DEFINIR como privado e definir os dois métodos de acesso.
+	//TODO DEFINIR como privado e definir os dois metodos de acesso.
 	public Conta conta;
-	//TODO DEFINIR como privado e definir os dois métodos de acesso.
+	//TODO DEFINIR como privado e definir os dois metodos de acesso.
 	public String nome;
-	//TODO DEFINIR como privado e definir os dois métodos de acesso.
+	//TODO DEFINIR como privado e definir os dois metodos de acesso.
 	public String senha;
 	
 	/**
@@ -22,7 +22,7 @@ public class Cliente {
 	public String getNome(){
 		return nome;
 	}
-	//TODO Melhorar o nome deste método
+	//TODO Melhorar o nome deste metodo
 	public String senha(){
 		return senha;
 	}
