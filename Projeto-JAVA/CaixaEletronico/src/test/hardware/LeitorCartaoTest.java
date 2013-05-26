@@ -15,7 +15,7 @@ public class LeitorCartaoTest {
 			
 			leitorCartao.reterCartao();
 			
-			assertTrue("Teste de Retenção de Cartão",true);
+			assertTrue("Teste de Retencao de Cartao",true);
 			
 		}catch(Exception ex){
 			
