@@ -1,6 +1,5 @@
 package dominio;
 
-import com.sun.jmx.snmp.Timestamp;
 
 //TODO Definir metodos de acesso
 public class Recibo {
