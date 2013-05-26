@@ -1,19 +1,22 @@
 package negocio;
-
+import dominio.Conta;
 import dominio.Recibo;
 
 public class Saque {
-	//TODO DEFINIR tipos do parametros
-	//TODO DEFINIR metodo com nome em letra minuscula
-	//public void Sacar(conta, quantia){
-	//}
-	//TODO Verificar o parametro de entrada "this"
-	//TODO DEFINIR metodo com nome em letra minuscula 
-	//public Recibo ConstruirRecibo(this){
-	//	return null;
-	//}
-	//TODO IMPLEMENTAR
-	public void ValidarSaque(){
+
+	public void sacar(Conta numero, int quantia){
+		
+	}
+	
+	public Recibo construirRecibo() {
+		return null;
+	}
+	
+	public void validarQuantiaContaCliente(int quantia) {
+		
+	}
+	
+	public void validarQuantiaMultipla10(int quantia) {
 		
 	}
 	

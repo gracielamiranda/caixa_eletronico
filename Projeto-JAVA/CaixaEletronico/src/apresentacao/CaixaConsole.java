@@ -1,4 +1,5 @@
 package apresentacao;
+import dominio.*;
 
 public class CaixaConsole {
 
@@ -12,6 +13,15 @@ public class CaixaConsole {
 	
 	public void  menuOperacoes(){
 		
+	}
+	
+	public int operacaoEscolhida() {
+		return 0;
+	}
+	
+	public boolean autenticarCliente(Cliente cliente) {
+		
+		return false;
 	}
 }
 

@@ -1,17 +1,22 @@
 package negocio;
+import dominio.Conta;
+import dominio.Recibo;;
 
 public class Deposito {
-	//TODO DEFINIR tipos do parametros
-	//TODO DEFINIR metodo com nome em letra minuscula
-	//public void Depositar(conta,quantia){
-	//}
-	//TODO Verificar o parametro de entrada "this"
-	//TODO DEFINIR metodo com nome em letra minuscula 
-	//public Recibo ConstruirRecibo(this){
-	//	return null;
-	//}
-	//TODO IMPLEMENTAR, no diagrama nao ha referencia para outras classes
-	public void ValidarDeposito(){
+
+	public void depositar(Conta numero, int quantia) {
+		
+	}
+	
+	public Recibo construirRecibo() {
+		return null;
+	}
+	
+	public boolean validarDeposito(int quantia, Conta numero) {
+		return false;
+	}
+	
+	public void confirmarDeposito(int quantia, Conta numero, String envelope) {
 		
 	}
 
