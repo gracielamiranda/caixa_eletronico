@@ -9,6 +9,7 @@ import dominio.Conta;
 import dominio.Log;
 import dominio.Recibo;
 
+import util.DepositoNaoPermitidoException;
 import util.LimiteTentativasException;
 import util.QuantiaDesejadaException;
 import util.QuantiaMultiplaDezException;
@@ -114,6 +115,9 @@ public class CaixaConsole {
 
 		if (opcaoByte == 3){
 			saque();
+			menuOperacoes();
+		}else if (opcaoByte == 2){
+			deposito();
 			menuOperacoes();
 		}else if (opcaoByte == 6){
 			CaixaConsole caixa = new CaixaConsole();
@@ -252,6 +256,77 @@ public class CaixaConsole {
 			//chamar o hardware que conta nota aqui
 			System.out.println("Saque efetuado com sucesso, retire o dinheiro");
 		}	
+	}
+	
+	private void deposito() {
+			int valor =0;
+			String numeroConta = null;
+			
+			do{
+				System.out.println("Digite a agencia para deposito:");
+				Scanner scanIn = new Scanner(System.in);
+				try{
+					numeroConta = scanIn.nextLine();
+				}catch(InputMismatchException ime){
+					numeroConta = null;
+				}
+				
+			}while(numeroConta == null || numeroConta.equals(""));
+			System.out.println("Digite uma agencia valida.");
+			
+			do{
+				System.out.println("Digite a conta para deposito:");
+				Scanner scanIn = new Scanner(System.in);
+				try{
+					numeroConta = scanIn.nextLine();
+				}catch(InputMismatchException ime){
+					numeroConta = null;
+				}
+				
+			}while(numeroConta == null || numeroConta.equals(""));
+			System.out.println("Digite uma conta valida.");
+			
+			do{
+				System.out.println("Digite o valor do deposito:");
+				Scanner scanIn = new Scanner(System.in);
+				try{
+					valor = scanIn.nextInt();
+				}catch(InputMismatchException ime){
+					valor = 0;
+				}
+				
+			}while(valor == 0);
+			
+			depositar(numeroConta, valor);
+	}
+	
+	private void depositar(String numero, int quantia) {
+		CaixaEletronicoFacade caixaFacade = new CaixaEletronicoFacade();
+		Recibo recibo = null;
+		try {
+			//FIXME definir de onde vira o objeto conta
+			Conta conta = new Conta();
+			conta.saldo = 1000D;
+			conta.numero = "79812";
+			conta.agencia = "1000";
+			
+			caixaFacade.depositar(quantia, conta);
+			
+		} 	catch (DepositoNaoPermitidoException e) {
+			System.out.println("O deposito nao pode ser realizado");
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}
+			deposito();
+		}
+		
+		if(recibo != null) {
+			Impressora imp = new Impressora();
+			imp.imprimirRecibo(recibo);
+			System.out.println("Deposito efetuado com sucesso, retire o recibo"); 
+		}
 	}
 	
 }

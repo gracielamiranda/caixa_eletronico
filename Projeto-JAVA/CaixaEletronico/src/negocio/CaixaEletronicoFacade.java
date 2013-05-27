@@ -1,4 +1,5 @@
 package negocio;
+import util.DepositoNaoPermitidoException;
 import util.LimiteTentativasException;
 import util.QuantiaDesejadaException;
 import util.QuantiaMultiplaDezException;
@@ -10,7 +11,7 @@ import dominio.Recibo;
 //TODO Implementar quando classes de negocio estiverem melhor definidas
 public class CaixaEletronicoFacade {
 
-	public void depositar(int quantia, Conta numero){
+	public void depositar(int quantia, Conta numero) throws DepositoNaoPermitidoException {
 		Deposito deposito  = new Deposito();
 		//deposito.Depositar();
 	}
