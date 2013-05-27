@@ -1,6 +1,11 @@
 package negocio;
+import util.LimiteTentativasException;
+import util.QuantiaDesejadaException;
+import util.QuantiaMultiplaDezException;
+import util.TransferenciaNaoPermitidaException;
 import dominio.Conta;
 import dominio.Cliente;
+import dominio.Recibo;
 
 //TODO Implementar quando classes de negocio estiverem melhor definidas
 public class CaixaEletronicoFacade {
@@ -15,17 +20,18 @@ public class CaixaEletronicoFacade {
 		//saldo.ConsultarSaldo();
 	}
 	
-	public void transferir(Conta origem, Conta destino, int valor){
+	public void transferir(Conta origem, Conta destino, int valor)throws TransferenciaNaoPermitidaException{
 		Transferencia transferencia  = new Transferencia();
 		//transferencia.TransferirValor(contaOrigem,contaDestino, valor);
 	}
 	
-	public void sacar(int valor, Conta numero){
+	public Recibo sacar(int valor, Conta conta) throws QuantiaMultiplaDezException, QuantiaDisponivelNoCaixaException, QuantiaDesejadaException{
 		Saque saque  = new Saque();
-		//saque.Sacar(conta,quantia);
+		return saque.sacar(conta,valor);
 	}
 	
-	public void validarCliente(Conta cartao, Cliente senha) {
-		
+	public boolean validarCliente(int cartao, String senha) throws LimiteTentativasException {
+		Autenticacao aut = new Autenticacao();
+		return aut.validarCliente(cartao, senha);
 	}
 }

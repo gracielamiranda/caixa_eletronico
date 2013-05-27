@@ -6,9 +6,9 @@ public class Recibo {
 	//TODO Nao ha tipo definido para informacao, assumindo String
 	public String informacao;
 	//TODO Nao ha tipo definido para data, assumindo String
-	String data;
+	public String data;
 
 	public Conta conta;
 
-	int hora;
+	public String hora;
 }

@@ -11,10 +11,12 @@ import dominio.Recibo;
  */
 public class Impressora {
 	public void imprimirRecibo(Recibo recibo){
-		System.out.println("Impressao de recibo");
-		System.out.println("Informacao: "+recibo.informacao );
-		System.out.println("Data: "+recibo.informacao );
-		System.out.println("Conta: "+recibo.conta );
-		System.out.println("Informacao:"+recibo.informacao );
+		if(recibo != null){
+			System.err.println("Impressao de recibo");
+			System.err.println("Informacao: "+recibo.informacao );
+			System.err.println("Data: "+recibo.data );
+			System.err.println("Hora: "+recibo.hora );
+			System.err.println("Conta: "+recibo.conta.numero );
+		}
 	}
 }
